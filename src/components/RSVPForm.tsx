@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CheckCircle, Loader2, Heart, Sparkles } from 'lucide-react';
+import { CheckCircle, Loader2, Heart, Sparkles, Phone } from 'lucide-react';
+import { submitToSheet } from '../lib/googleSheets';
+
+const rsvpContacts = [
+  { name: 'Priyantha', display: '077 785 0514', tel: '+94777850514' },
+  { name: 'Asiri', display: '077 526 7954', tel: '+94775267954' },
+];
 
 export const RSVPForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -15,8 +21,12 @@ export const RSVPForm: React.FC = () => {
     setStatus('loading');
 
     try {
-      // Simulate network request latency
-      await new Promise(resolve => setTimeout(resolve, 800));
+      await submitToSheet({
+        sheet: 'RSVP',
+        fullName: formData.fullName.trim(),
+        guests: formData.guests,
+        dietaryNotes: formData.dietaryNotes.trim(),
+      });
 
       setStatus('success');
       setFormData({ fullName: '', guests: '1', dietaryNotes: '' });
@@ -27,7 +37,7 @@ export const RSVPForm: React.FC = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-6 relative py-10">
+    <div className="max-w-5xl mx-auto px-6 relative py-4">
       {/* Premium ambient backdrop & glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-radial from-brand-gold/15 to-transparent rounded-full blur-[100px] pointer-events-none -z-10" />
 
@@ -36,7 +46,7 @@ export const RSVPForm: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="glass p-10 sm:p-14 lg:p-16 rounded-[3rem] border border-white/40 shadow-[0_30px_60px_rgba(197,160,89,0.1)] relative overflow-hidden bg-white/60 backdrop-blur-3xl lg:flex items-center gap-16"
+        className="glass p-8 sm:p-10 lg:p-12 rounded-[3rem] border border-white/40 shadow-[0_30px_60px_rgba(197,160,89,0.1)] relative overflow-hidden bg-white/60 backdrop-blur-3xl lg:flex items-center gap-16"
       >
         {/* Soft top border line */}
         <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-champagne via-brand-mocha/80 to-brand-champagne" />
@@ -60,7 +70,24 @@ export const RSVPForm: React.FC = () => {
             Your presence means the world to us. Please kindly let us know if you will be able to join our celebration.
           </p>
 
-          <div className="w-12 h-[1px] bg-brand-gold/50 mx-auto lg:mx-0" />
+          <p className="text-brand-mocha uppercase tracking-[0.3em] text-[10px] sm:text-[11px] font-bold mb-6">
+            Kindly reply before 06th November 2026
+          </p>
+
+          <div className="w-12 h-[1px] bg-brand-gold/50 mx-auto lg:mx-0 mb-6" />
+
+          <div className="flex flex-col items-center lg:items-start gap-3">
+            {rsvpContacts.map((contact) => (
+              <a
+                key={contact.name}
+                href={`tel:${contact.tel}`}
+                className="inline-flex items-center gap-3 text-brand-mocha font-serif text-lg hover:text-brand-gold transition-colors duration-300"
+              >
+                <Phone className="w-4 h-4 text-brand-gold flex-shrink-0" />
+                <span>{contact.name} — {contact.display}</span>
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Right Side: Flowing Form */}
@@ -137,6 +164,12 @@ export const RSVPForm: React.FC = () => {
                     onChange={(e) => setFormData({ ...formData, dietaryNotes: e.target.value })}
                   />
                 </div>
+
+                {status === 'error' && (
+                  <p role="alert" className="text-center text-red-700 font-serif italic text-base">
+                    We could not send your response. Please try again, or call us on the numbers listed.
+                  </p>
+                )}
 
                 <div className="pt-4">
                   <button

@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Send, Loader2, Sparkles } from 'lucide-react';
+import { toast } from 'sonner';
+import { fetchWishes, submitToSheet } from '../lib/googleSheets';
 
 interface Wish {
   id: string;
@@ -24,27 +26,47 @@ export const WishesSection: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  useEffect(() => {
+    let cancelled = false;
+
+    fetchWishes()
+      .then((saved) => {
+        if (cancelled) return;
+        const loaded = saved.map((wish) => ({ ...wish, createdAt: new Date(wish.createdAt) }));
+        // Keep any wish the guest posted while the list was still loading.
+        setWishes(prev => [...prev, ...loaded]);
+      })
+      .catch((error) => console.error('Error loading wishes: ', error));
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.message) return;
+    const name = formData.name.trim();
+    const message = formData.message.trim();
+    if (!name || !message) return;
     setIsSubmitting(true);
 
     try {
-      // Simulate network request latency
-      await new Promise(resolve => setTimeout(resolve, 800));
+      await submitToSheet({ sheet: 'WISH', name, message });
 
       const newWish: Wish = {
-        id: Date.now().toString(),
-        name: formData.name,
-        message: formData.message,
+        id: `local-${Date.now()}`,
+        name,
+        message,
         createdAt: new Date(),
       };
-      
+
       // Prepend the new wish to the list
       setWishes(prev => [newWish, ...prev]);
       setFormData({ name: '', message: '' });
+      toast.success('Your blessing has been shared. Thank you!');
     } catch (error) {
       console.error('Error submitting wish: ', error);
+      toast.error('Could not send your wish. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -145,7 +167,7 @@ export const WishesSection: React.FC = () => {
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 sm:gap-4 mb-4">
                   <h4 className="font-display text-2xl text-brand-mocha tracking-tight pl-2">{wish.name}</h4>
                   <span className="text-[9px] uppercase tracking-[0.2em] text-brand-sand font-bold bg-white/60 px-3 py-1 rounded-full border border-stone-100/50">
-                    {wish.createdAt ? getRelativeTime(wish.createdAt) : 'just now'}
+                    {Number.isNaN(wish.createdAt.getTime()) ? '' : getRelativeTime(wish.createdAt)}
                   </span>
                 </div>
                 <p className="text-brand-sand font-serif italic text-lg sm:text-lg leading-relaxed pl-2">

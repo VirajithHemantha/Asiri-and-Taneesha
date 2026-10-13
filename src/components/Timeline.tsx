@@ -1,19 +1,17 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Heart, Music, Camera, Utensils, PartyPopper } from 'lucide-react';
+import { Heart, Music, PartyPopper } from 'lucide-react';
 
 const events = [
-  { time: '03:00 PM', title: 'Guest Arrival at Church', icon: Heart, desc: 'Welcoming our loved ones to St. Mary\'s Cathedral, Colombo' },
-  { time: '03:30 PM', title: 'Wedding Ceremony', icon: Music, desc: 'The sacred exchange of vows at the cathedral' },
-  { time: '07:00 PM', title: 'Reception Begins', icon: PartyPopper, desc: 'Welcome to ITC Rathnadeepa, Colombo' },
-  { time: '08:00 PM', title: 'Wedding Feast', icon: Utensils, desc: 'A grand celebratory dinner' },
-  { time: '09:30 PM', title: 'Cake Cutting', icon: Camera, desc: 'Sweet moments and photographs' },
+  { time: '08:00 AM', title: 'Church Ceremony', icon: Heart, desc: 'The sacred exchange of vows at St. John De Baptist Church, Nagoda' },
+  { time: '10:30 AM', title: 'Reception Begins', icon: PartyPopper, desc: 'Welcome to Royal Grand, Jaela' },
+  { time: '03:30 PM', title: 'Reception Concludes', icon: Music, desc: 'A fond farewell, with our heartfelt thanks' },
 ];
 
 export const Timeline: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-6">
-      <div className="text-center mb-20">
+      <div className="text-center mb-10">
         <span className="text-brand-mocha uppercase tracking-[0.4em] text-[10px] font-medium mb-4 block">
           The Day's Flow
         </span>
@@ -25,7 +23,7 @@ export const Timeline: React.FC = () => {
         {/* Vertical Line */}
         <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-brand-gold/20 to-transparent" />
 
-        <div className="space-y-24">
+        <div className="space-y-12">
           {events.map((event, index) => (
             <motion.div
               key={event.title}
