@@ -56,15 +56,15 @@ export const CoupleDetails: React.FC = () => {
           {/* Glowing border effect */}
           <div className="absolute -inset-2 bg-gradient-to-b from-brand-mocha/30 to-transparent rounded-[12rem_12rem_1rem_1rem] blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
-          <div className="relative w-[300px] h-[400px] sm:w-[360px] sm:h-[500px] lg:w-[420px] lg:h-[580px] rounded-[12rem_12rem_16px_16px] overflow-hidden border-[6px] border-white/90 shadow-[0_20px_50px_rgba(197,160,89,0.2)] bg-brand-champagne mx-auto z-10 transition-transform duration-700 group-hover:-translate-y-2">
+          <div className="relative w-[300px] h-[400px] sm:w-[360px] sm:h-[500px] lg:w-[420px] lg:h-[580px] rounded-[12rem_12rem_16px_16px] overflow-hidden border-[6px] border-white/90 shadow-[0_20px_50px_rgba(212,134,156,0.2)] bg-brand-champagne mx-auto z-10 transition-transform duration-700 group-hover:-translate-y-2">
             <img
-              src="/4.jpeg"
+              src="/images/protagonists.jpg"
               onError={(e) => {
                 e.currentTarget.src = "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800&h=1000";
                 e.currentTarget.onerror = null;
               }}
               alt="Asiri and Taneesha"
-              className="w-full h-full object-cover object-[center_75%] transition-transform duration-[1.5s] ease-out group-hover:scale-[1.05]"
+              className="w-full h-full object-cover object-[center_30%] transition-transform duration-[1.5s] ease-out group-hover:scale-[1.05]"
             />
             {/* Elegant inner shadow & overlay */}
             <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.1)] pointer-events-none" />

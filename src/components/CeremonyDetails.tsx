@@ -38,7 +38,7 @@ export const CeremonyDetails: React.FC = () => {
               
               {/* Calendar */}
               <div className="relative group">
-                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-gold/40 shadow-lg flex items-center justify-center group-hover:border-brand-mocha group-hover:shadow-[0_4px_15px_rgba(197,160,89,0.3)] transition-all duration-500">
+                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-gold/40 shadow-lg flex items-center justify-center group-hover:border-brand-mocha group-hover:shadow-[0_4px_15px_rgba(212,134,156,0.3)] transition-all duration-500">
                   <Calendar className="w-5 h-5 text-brand-mocha group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div>
@@ -49,7 +49,7 @@ export const CeremonyDetails: React.FC = () => {
 
               {/* Clock */}
               <div className="relative group">
-                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-gold/40 shadow-lg flex items-center justify-center group-hover:border-brand-mocha group-hover:shadow-[0_4px_15px_rgba(197,160,89,0.3)] transition-all duration-500">
+                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-gold/40 shadow-lg flex items-center justify-center group-hover:border-brand-mocha group-hover:shadow-[0_4px_15px_rgba(212,134,156,0.3)] transition-all duration-500">
                   <Clock className="w-5 h-5 text-brand-mocha group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div>
@@ -60,7 +60,7 @@ export const CeremonyDetails: React.FC = () => {
 
               {/* Location */}
               <div className="relative group">
-                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-gold/40 shadow-lg flex items-center justify-center group-hover:border-brand-mocha group-hover:shadow-[0_4px_15px_rgba(197,160,89,0.3)] transition-all duration-500">
+                <div className="absolute top-1/2 -translate-y-1/2 -left-[64px] sm:-left-[74px] w-12 h-12 bg-white rounded-full border border-brand-gold/40 shadow-lg flex items-center justify-center group-hover:border-brand-mocha group-hover:shadow-[0_4px_15px_rgba(212,134,156,0.3)] transition-all duration-500">
                   <MapPin className="w-5 h-5 text-brand-mocha group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div>
@@ -86,7 +86,7 @@ export const CeremonyDetails: React.FC = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-brand-champagne/40 arch-shape blur-2xl -z-20" />
 
             {/* Main Creative Image Frame */}
-            <div className="relative aspect-[3/4] sm:aspect-[4/5] arch-shape overflow-hidden border-[6px] sm:border-[8px] border-white shadow-[0_20px_50px_rgba(197,160,89,0.2)] bg-white group">
+            <div className="relative aspect-[3/4] sm:aspect-[4/5] arch-shape overflow-hidden border-[6px] sm:border-[8px] border-white shadow-[0_20px_50px_rgba(212,134,156,0.2)] bg-white group">
               <img
                 src="/5.jpeg"
                 onError={(e) => { 
@@ -110,7 +110,7 @@ export const CeremonyDetails: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6, duration: 1, ease: "easeOut" }}
-            className="mt-10 sm:mt-14 bg-white/85 backdrop-blur-xl p-6 sm:p-10 shadow-[0_30px_60px_rgba(197,160,89,0.15)] rounded-2xl border border-white relative overflow-hidden"
+            className="mt-10 sm:mt-14 bg-white/85 backdrop-blur-xl p-6 sm:p-10 shadow-[0_30px_60px_rgba(212,134,156,0.15)] rounded-2xl border border-white relative overflow-hidden"
           >
             <div className="absolute inset-x-8 -top-px h-[2px] bg-gradient-to-r from-transparent via-brand-mocha/60 to-transparent" />
             <div className="relative flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">

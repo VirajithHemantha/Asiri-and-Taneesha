@@ -36,26 +36,26 @@ export const Hero: React.FC = () => {
       {/* Corner Ornaments */}
       <div className="absolute top-6 left-6 w-12 h-12 pointer-events-none z-10 hidden sm:block opacity-60">
         <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5,5 L5,25 C5,15 15,5 25,5 L5,5 Z" fill="none" stroke="#c5a059" strokeWidth="1"/>
-          <circle cx="5" cy="5" r="2" fill="#c5a059" />
+          <path d="M5,5 L5,25 C5,15 15,5 25,5 L5,5 Z" fill="none" stroke="#d4869c" strokeWidth="1"/>
+          <circle cx="5" cy="5" r="2" fill="#d4869c" />
         </svg>
       </div>
       <div className="absolute top-6 right-6 w-12 h-12 pointer-events-none z-10 hidden sm:block opacity-60" style={{ transform: 'scaleX(-1)' }}>
         <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5,5 L5,25 C5,15 15,5 25,5 L5,5 Z" fill="none" stroke="#c5a059" strokeWidth="1"/>
-          <circle cx="5" cy="5" r="2" fill="#c5a059" />
+          <path d="M5,5 L5,25 C5,15 15,5 25,5 L5,5 Z" fill="none" stroke="#d4869c" strokeWidth="1"/>
+          <circle cx="5" cy="5" r="2" fill="#d4869c" />
         </svg>
       </div>
       <div className="absolute bottom-6 left-6 w-12 h-12 pointer-events-none z-10 hidden sm:block opacity-60" style={{ transform: 'scaleY(-1)' }}>
         <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5,5 L5,25 C5,15 15,5 25,5 L5,5 Z" fill="none" stroke="#c5a059" strokeWidth="1"/>
-          <circle cx="5" cy="5" r="2" fill="#c5a059" />
+          <path d="M5,5 L5,25 C5,15 15,5 25,5 L5,5 Z" fill="none" stroke="#d4869c" strokeWidth="1"/>
+          <circle cx="5" cy="5" r="2" fill="#d4869c" />
         </svg>
       </div>
       <div className="absolute bottom-6 right-6 w-12 h-12 pointer-events-none z-10 hidden sm:block opacity-60" style={{ transform: 'scale(-1, -1)' }}>
         <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5,5 L5,25 C5,15 15,5 25,5 L5,5 Z" fill="none" stroke="#c5a059" strokeWidth="1"/>
-          <circle cx="5" cy="5" r="2" fill="#c5a059" />
+          <path d="M5,5 L5,25 C5,15 15,5 25,5 L5,5 Z" fill="none" stroke="#d4869c" strokeWidth="1"/>
+          <circle cx="5" cy="5" r="2" fill="#d4869c" />
         </svg>
       </div>
 
@@ -109,7 +109,7 @@ export const Hero: React.FC = () => {
           {/* Enhanced Date pill with premium glass effect */}
           <div className="inline-block relative group mt-4 sm:mt-8 w-full sm:w-auto px-4 sm:px-0">
             <div className="absolute -inset-1 bg-gradient-to-r from-brand-gold/40 via-brand-gold-light/40 to-brand-gold/40 rounded-full blur-[8px] opacity-70 group-hover:opacity-100 transition duration-1000 group-hover:duration-300 transform group-hover:scale-105" />
-            <div className="relative px-4 sm:px-12 py-3 sm:py-5 bg-white/70 backdrop-blur-lg border border-brand-gold/50 rounded-full shadow-[0_8px_30px_rgba(197,160,89,0.15)] overflow-hidden whitespace-nowrap flex items-center justify-center">
+            <div className="relative px-4 sm:px-12 py-3 sm:py-5 bg-white/70 backdrop-blur-lg border border-brand-gold/50 rounded-full shadow-[0_8px_30px_rgba(212,134,156,0.15)] overflow-hidden whitespace-nowrap flex items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-b from-white/60 to-transparent pointer-events-none" />
               <span className="relative text-[16px] sm:text-3xl font-serif text-brand-mocha tracking-[0.2em] sm:tracking-[0.4em] font-medium drop-shadow-sm flex items-center gap-2 sm:gap-3 whitespace-nowrap">
                 <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-brand-gold flex-shrink-0" />

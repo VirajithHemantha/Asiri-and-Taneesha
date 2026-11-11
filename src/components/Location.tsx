@@ -50,7 +50,7 @@ export const Location: React.FC = () => {
             transition={{ duration: 1.2, ease: "easeOut", delay: index * 0.2 }}
             className="z-20"
           >
-            <div className="h-full bg-white/90 backdrop-blur-2xl p-10 sm:p-12 rounded-[2.5rem] shadow-[0_30px_60px_rgba(197,160,89,0.15)] border border-brand-gold/30 relative overflow-hidden group text-center">
+            <div className="h-full bg-white/90 backdrop-blur-2xl p-10 sm:p-12 rounded-[2.5rem] shadow-[0_30px_60px_rgba(212,134,156,0.15)] border border-brand-gold/30 relative overflow-hidden group text-center">
 
               {/* Elegant top border gradient */}
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-champagne via-brand-gold to-brand-mocha" />

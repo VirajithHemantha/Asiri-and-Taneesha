@@ -20,7 +20,7 @@ export function EnvelopeOpening({ onComplete, onMusicStart }: { onComplete: () =
   };
 
   return (
-    <div className="fixed inset-0 bg-[#061e14] z-[100] flex items-center justify-center overflow-hidden">
+    <div className="fixed inset-0 bg-[#3d1424] z-[100] flex items-center justify-center overflow-hidden">
       <video
         ref={videoRef}
         src="/images/greenopening.mp4"
@@ -43,7 +43,7 @@ export function EnvelopeOpening({ onComplete, onMusicStart }: { onComplete: () =
             <div className="w-[1px] h-24 bg-gradient-to-b from-transparent to-brand-gold/50 mb-8" />
             <button
               onClick={handleStart}
-              className="px-10 py-4 bg-transparent border border-brand-gold/40 text-brand-gold font-sans uppercase tracking-[0.4em] text-xs hover:bg-brand-gold hover:text-white transition-all duration-700 rounded-full shadow-[0_0_30px_rgba(197,160,89,0.1)]"
+              className="px-10 py-4 bg-transparent border border-brand-gold/40 text-brand-gold font-sans uppercase tracking-[0.4em] text-xs hover:bg-brand-gold hover:text-white transition-all duration-700 rounded-full shadow-[0_0_30px_rgba(212,134,156,0.1)]"
             >
               Open Invitation
             </button>

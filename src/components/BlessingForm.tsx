@@ -53,23 +53,23 @@ export function BlessingForm() {
     >
       <div className="space-y-6">
         <div>
-          <label className="block text-sm font-serif text-[#183d72] mb-2 font-semibold">
+          <label className="block text-sm font-serif text-[#5c1f36] mb-2 font-semibold">
             Your Name
           </label>
           <input
             {...register('name', { required: 'Name is required' })}
-            className="w-full px-4 py-3 rounded-xl border border-blue-200 bg-white focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/50"
+            className="w-full px-4 py-3 rounded-xl border border-pink-200 bg-white focus:outline-none focus:ring-2 focus:ring-[#d4869c]/50"
             placeholder="Name"
           />
         </div>
         <div>
-          <label className="block text-sm font-serif text-[#183d72] mb-2 font-semibold">
+          <label className="block text-sm font-serif text-[#5c1f36] mb-2 font-semibold">
             Your Wishes
           </label>
           <textarea
             {...register('message', { required: 'Please leave a message' })}
             rows={4}
-            className="w-full px-4 py-3 rounded-xl border border-blue-200 bg-white focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/50 resize-none"
+            className="w-full px-4 py-3 rounded-xl border border-pink-200 bg-white focus:outline-none focus:ring-2 focus:ring-[#d4869c]/50 resize-none"
             placeholder="Share your blessings and advice for the couple..."
           />
         </div>
@@ -78,7 +78,7 @@ export function BlessingForm() {
           disabled={isSubmitting}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="w-full py-4 bg-gradient-to-r from-[#25569a] to-[#183d72] text-white rounded-xl font-serif text-lg shadow-lg flex items-center justify-center gap-2"
+          className="w-full py-4 bg-gradient-to-r from-[#9b4a66] to-[#5c1f36] text-white rounded-xl font-serif text-lg shadow-lg flex items-center justify-center gap-2"
         >
           {isSubmitting ? 'Sending Love...' : (
             <>

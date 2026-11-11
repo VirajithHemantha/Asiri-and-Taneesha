@@ -24,7 +24,7 @@ export function FloatingParticles() {
           style={{
             top: `${p.top}%`,
             left: `${p.left}%`,
-            background: `radial-gradient(circle, #D4AF37 0%, transparent 80%)`,
+            background: `radial-gradient(circle, #d4869c 0%, transparent 80%)`,
           }}
           animate={{
             y: [-20, -100, -20],
